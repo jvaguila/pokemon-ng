@@ -1,0 +1,14 @@
+<div class="slider">
+  <div class="slider__init">0</div>
+  <div class="slider__input">
+    <input
+      type="range"
+      min="1"
+      max="100"
+      [value]="valueToshow"
+      #value
+      (change)="handledValue(value.value)"
+    />
+  </div>
+  <div class="slider__end">100</div>
+</div>

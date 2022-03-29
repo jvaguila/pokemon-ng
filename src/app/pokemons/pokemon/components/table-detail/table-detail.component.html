@@ -1,0 +1,35 @@
+<table class="table-detail">
+  <thead>
+    <th class="table-detail__center">Nombre</th>
+    <th class="table-detail__center">Imagen</th>
+    <th class="table-detail__center">Ataque</th>
+    <th class="table-detail__center">Defensa</th>
+    <th class="table-detail__center">Acciones</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pokemon of pokemons">
+      <td>{{ pokemon.name }}</td>
+      <td class="table-detail__center">
+        <img class="table-detail__image" [src]="pokemon.image" alt="image" />
+      </td>
+      <td>{{ pokemon.attack }}</td>
+      <td>{{ pokemon.defense }}</td>
+      <td>
+        <div class="table-detail__actions">
+          <app-button
+            [icon]="icons.EDIT"
+            [type]="icons.EDIT"
+            [variant]="variant.NONE"
+            (handleEmit)="handleValue(pokemon, $event)"
+          ></app-button>
+          <app-button
+            [icon]="icons.DELETE"
+            [type]="icons.DELETE"
+            [variant]="variant.NONE"
+            (handleEmit)="handleValue(pokemon, $event)"
+          ></app-button>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,54 @@
+<div class="create-pokemon">
+  <h2 class="create-pokemon__title">Nuevo Pokemon</h2>
+  <form [formGroup]="myForm">
+    <div class="create-pokemon__content">
+      <div>
+        <div class="create-pokemon__group">
+          <span class="create-pokemon__label">Nombre:</span>
+          <div class="create-pokemon__input">
+            <input type="text" placeholder="Nombre" formControlName="name" />
+          </div>
+        </div>
+        <div class="create-pokemon__group create-pokemon--mt">
+          <span class="create-pokemon__label">Imagen: </span>
+          <div class="create-pokemon__input">
+            <input type="text" placeholder="URL" formControlName="image" />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="create-pokemon__group">
+          <span class="create-pokemon__label">Ataque: </span>
+          <app-slider
+            class="create-pokemon__input"
+            [initialValue]="dataInitial?.attack"
+            (handleValue)="changeValueSlider('attack', $event)"
+          ></app-slider>
+        </div>
+        <div class="create-pokemon__group create-pokemon--mt">
+          <span class="create-pokemon__label">Defensa: </span>
+          <app-slider
+            class="create-pokemon__input"
+            [initialValue]="dataInitial?.defense"
+            (handleValue)="changeValueSlider('defense', $event)"
+          ></app-slider>
+        </div>
+      </div>
+    </div>
+    <div class="create-pokemon__actions">
+      <app-button
+        [icon]="icons.SAVE"
+        [type]="icons.SAVE"
+        text="Guardar"
+        [disabled]="myForm.invalid"
+        (handleEmit)="emit($event)"
+      ></app-button>
+      <app-button
+        [icon]="icons.CLOSE"
+        [type]="icons.CLOSE"
+        text="Cancelar"
+        (handleEmit)="emit($event)"
+      ></app-button>
+    </div>
+  </form>
+</div>

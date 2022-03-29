@@ -1,0 +1,38 @@
+<ng-container *ngIf="showInterface;else load">
+  <h3>Listado de Pokemon</h3>
+
+  <div class="index__actions">
+    <app-input
+      [icon]="icons.SEARCH"
+      (handleValue)="searchPokemon($event)"
+    ></app-input>
+    <app-button
+      [icon]="icons.ADD"
+      [type]="icons.ADD"
+      text="Nuevo"
+      (handleEmit)="add()"
+    ></app-button>
+  </div>
+
+  <!-- crear o editar -->
+  <div class="index__create" *ngIf="showCreatePokemon">
+    <app-create-pokemon
+      (handleEmit)="save($event)"
+      [dataInitial]="pokemonToEdit"
+    ></app-create-pokemon>
+  </div>
+
+  <!-- detalles -->
+  <div class="index__table">
+    <app-table-detail
+      [pokemons]="pokemons"
+      (handleEmit)="handleOptionTable($event)"
+    ></app-table-detail>
+  </div>
+
+  <h4 *ngIf="pokemons.length === 0">No hay pokemones con esa búsqueda...</h4>
+</ng-container>
+
+<ng-template #load>
+  <h4>Cargando...</h4>
+</ng-template>

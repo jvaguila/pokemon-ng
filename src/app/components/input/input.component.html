@@ -1,0 +1,11 @@
+<div class="input input--normal">
+  <div *ngIf="icon" class="input__icon">
+    <img [src]="setIcon()" [alt]="icon" />
+  </div>
+  <input
+    type="text"
+    #value
+    (keyup)="handledValue(value.value)"
+    placeholder="Buscar..."
+  />
+</div>

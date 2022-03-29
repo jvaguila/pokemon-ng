@@ -1,0 +1,30 @@
+@import "../../../colors.scss";
+
+.btn {
+  // width: 130px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__text {
+    margin-left: 16px;
+    color: white;
+  }
+  &--none {
+    background: none;
+    border: none;
+    &:hover {
+      background-color: $hover;
+    }
+  }
+  &--primary {
+    background-color: $primary;
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+  &--opacity {
+    opacity: 0.5;
+  }
+}

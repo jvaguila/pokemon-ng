@@ -1,0 +1,32 @@
+@import "./../../../../../colors.scss";
+
+.index {
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__table {
+    margin-top: 16px;
+  }
+  &__create {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
+
+p {
+  color: $primary;
+}
+
+img {
+  width: 50px;
+}
+
+@media screen and (max-width: 1024px) {
+  .index {
+    &__create {
+      width: 100%;
+    }
+  }
+}

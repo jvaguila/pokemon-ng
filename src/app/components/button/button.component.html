@@ -1,0 +1,8 @@
+<button
+  class="btn btn--{{ variant }}"
+  [ngClass]="{ 'btn--primary': primary, 'btn--opacity': disabled }"
+  (click)="handledEmit()"
+>
+  <img [src]="iconImage" alt="icon" />
+  <span *ngIf="text" class="btn__text">{{ text }}</span>
+</button>

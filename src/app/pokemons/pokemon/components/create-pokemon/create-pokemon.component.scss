@@ -1,0 +1,47 @@
+@import "../../../../../colors.scss";
+
+.create-pokemon {
+  padding: 50px;
+  border: 1px solid $gray;
+  &--mt {
+    margin-top: 8px;
+  }
+  &__title {
+    text-align: center;
+  }
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-gap: 50px;
+  }
+  &__label {
+    display: flex;
+    align-items: center;
+  }
+  &__group {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 50px 1fr;
+  }
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    gap: 16px;
+  }
+}
+
+input {
+  padding: 8px;
+  border: 1px solid $gray;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 678px) {
+  .create-pokemon {
+    padding: 25px;
+    &__content {
+      grid-template-columns: repeat(1, 100%);
+    }
+  }
+}
